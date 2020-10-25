@@ -2,6 +2,7 @@ version: "3"
 
 services:
   bagskata_php:
+    container_name: bagskata
     build: .
     volumes:
       - ~/Projects/BagsKata:/var/www/html
