@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  bagskata_php:
+    build: .
+    volumes:
+      - ~/Projects/BagsKata:/var/www/html
+    expose:
+      - 80
+    ports:
+      - 80:80
+  phpunit:
+    image: php:7.4-cli
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: vendor/bin/phpunit

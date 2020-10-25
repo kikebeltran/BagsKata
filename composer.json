@@ -1,0 +1,23 @@
+{
+    "name": "kikebeltran/bags-kata",
+    "description": "Bags Kata",
+    "require": {
+        "phpunit/phpunit": "^9.4"
+    },
+    "authors": [
+        {
+            "name": "kike.beltran",
+            "email": "info@kikebeltran.es"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BagsKata\\App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BagsKata\\Tests\\": "tests/"
+        }
+    }
+}
