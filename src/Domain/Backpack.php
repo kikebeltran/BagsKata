@@ -9,10 +9,10 @@ use BagsKata\App\Exceptions\BackpackFullException;
 class Backpack
 {
     
-    const QUANTITY = 8;
+    const MAX_ITEMS = 8;
 
     /**
-     * @var string
+     * @var Item[]
     */
     private array $items;
 
@@ -26,11 +26,16 @@ class Backpack
         return $this->items;
     }
 
+    public function setItems(array $items): void
+    {
+        $this->items = $items;
+    }
+
     public function add(Item $item): void
     {
-        if (count($this->items) >= self::QUANTITY) {
+        if (count($this->items) >= self::MAX_ITEMS)
             throw new BackpackFullException('Backpack is full');
-        }
+
 
         $this->items[] = $item;
     }

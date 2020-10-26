@@ -6,6 +6,7 @@ namespace BagsKata\Tests\Domain;
 
 use BagsKata\App\Domain\Bag;
 use BagsKata\App\Domain\Item;
+use BagsKata\App\Exceptions\BagCategoryInvalidException;
 use BagsKata\App\Exceptions\BagFullException;
 use PHPUnit\Framework\TestCase;
 
@@ -56,7 +57,7 @@ class BagTest extends TestCase
 
     } 
 
-    // /** @test */
+    /** @test */
     public function it_should_throw_a_full_bag_exception(): void
     {
 
@@ -70,6 +71,38 @@ class BagTest extends TestCase
         $this->expectException(BagFullException::class);
 
         $bag->add(new Item('Wool'));
+
+    } 
+    
+    // /** @test */
+    public function it_should_throw_a_invalid_category_bag_exception(): void
+    {
+
+        $leather = new Item('Leather');
+        $bag = new Bag($leather->category());
+
+        $bag->add($leather);
+        $bag->add(new Item('Linen'));
+        $bag->add(new Item('Silk'));
+        
+        $this->expectException(BagCategoryInvalidException::class);
+
+        $bag->add(new Item('Rose'));
+
+    } 
+    
+    /** @test */
+    public function it_should_accept_multicategory_items_at_bag_without_category(): void
+    {
+
+        $bag = new Bag();
+
+        $bag->add(new Item('Leather'));
+        $bag->add(new Item('Linen'));
+        $bag->add(new Item('Silk'));
+        $bag->add(new Item('Rose'));
+        
+        $this->assertInstanceOf(Bag::class, $bag);
 
     } 
     

@@ -5,11 +5,12 @@ declare(strict_types = 1);
 namespace BagsKata\App\Domain;
 
 use BagsKata\App\Exceptions\BagFullException;
+use BagsKata\App\Exceptions\BagCategoryInvalidException;
 
 class Bag
 {
 
-    const QUANTITY = 4;
+    const MAX_ITEMS = 4;
 
     private array $items;
 
@@ -29,11 +30,20 @@ class Bag
         return $this->items;
     }
 
+    public function setItems(array $items): void
+    {
+        $this->items = $items;
+    }
+    
     public function add(Item $item): void
     {
-        if (count($this->items) >= self::QUANTITY) {
+        if (count($this->items) >= self::MAX_ITEMS)
             throw new BagFullException('Bag is full');
-        }
+
+        
+        // if(!empty($this->category) && $this->category !== $item->category())            
+        //     throw new BagCategoryInvalidException("This bag contains $this->category elements, we can not add elements from $item->category() category");
+
 
         $this->items[] = $item;
     }

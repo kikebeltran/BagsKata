@@ -6,7 +6,6 @@ namespace BagsKata\App\Domain;
 
 use BagsKata\App\Exceptions\InvalidItemNameException;
 
-
 class Item
 {
     
