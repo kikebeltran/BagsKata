@@ -31,6 +31,7 @@ $ docker-compose run phpunit tests
 
 # Some considerations 🌚
 
+- Conceived with TDD.
 - Git setted with git-flow.
 - Working with PHP 7.4 with his beautiful typing.
 - Factories inspired by Laravel framework.
