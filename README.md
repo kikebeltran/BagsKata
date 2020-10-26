@@ -39,4 +39,4 @@ $ docker-compose run phpunit tests
 License
 ----
 
-Coded with ♥️ by Kike Beltrán
+Coded with ♥️  by Kike Beltrán
