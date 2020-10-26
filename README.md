@@ -28,7 +28,14 @@ To run tests:
 $ docker-compose run phpunit tests
 ```
 
+
+# Some considerations 🌚
+
+- Git setted with git-flow.
+- Working with PHP 7.4 with his beautiful typing
+
+
 License
 ----
 
-Kike Beltrán
+Coded with ♥️ by Kike Beltrán
