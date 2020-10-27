@@ -29,6 +29,14 @@ $ docker-compose run phpunit tests
 ```
 
 
+# Architecture
+
+![Architecture ](https://ekiketa.es/wp-content/uploads/2020/10/diagrama-bags-kata.png)
+
+I have used a layer architecture based on Uncle Bob's clean one.
+At this moment, I have only implemented the first two layers (Core and Use Cases). For a complete implementation, I would use the following layers (Network, Entry points, etc.)
+
+
 # Some considerations 🌚
 
 - Conceived with TDD.
